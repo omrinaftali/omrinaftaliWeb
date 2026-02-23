@@ -37,22 +37,27 @@
                 font-family: 'Noto Sans JP', sans-serif;
             }
 
-            /* מרכוז מוחלט של Hero */
+            /* --- תיקון סופי למרכוז ה-Hero --- */
             .hero {
+                position: relative;
+                height: 100vh !important;
                 display: flex !important;
                 align-items: center !important;
                 justify-content: center !important;
-                height: 100vh !important;
-                position: relative;
                 padding: 0 !important;
+                overflow: hidden;
             }
 
             .heroText {
-                position: relative !important;
-                z-index: 3;
+                position: absolute !important;
+                top: 50% !important;
+                left: 50% !important;
+                transform: translate(-50%, -50%) !important; /* זה מה שממרכז ב-100% */
+                z-index: 10;
                 text-align: center;
                 width: 100%;
                 bottom: auto !important;
+                margin: 0 !important;
             }
 
             .imageWrapper {
@@ -73,19 +78,13 @@
                 z-index: 2;
             }
 
-            .navbar {
-                background-color: var(--nav-bg) !important;
-                backdrop-filter: blur(10px);
-                z-index: 1000;
-            }
-
-            /* --- Timeline: הקו והעיגולים שביקשת --- */
+            /* --- Timeline: הקו והעיגולים --- */
             .experience-item {
                 position: relative;
                 padding-left: 35px;
                 border-left: 2px solid var(--accent-color);
                 margin-bottom: 30px;
-                text-align: left; /* יישור טקסט לשמאל בתוך ציר הזמן */
+                text-align: left;
             }
             .experience-item::before {
                 content: "";
@@ -98,7 +97,7 @@
                 background: var(--accent-color);
             }
 
-            /* --- Tech Expertise: עיצוב ה-Badges המקצועי --- */
+            /* --- Tech Expertise: Badges --- */
             .skill-badge {
                 display: inline-block;
                 padding: 6px 18px;
@@ -107,7 +106,6 @@
                 border-radius: 50px;
                 font-size: 0.9rem;
                 transition: all 0.3s ease;
-                font-weight: 400;
                 color: var(--text-color);
             }
             .skill-badge:hover {
@@ -116,14 +114,11 @@
                 transform: translateY(-3px);
             }
 
-            .project-card {
-                background-color: var(--card-bg);
-                border: 1px solid rgba(128, 128, 128, 0.1);
-                border-radius: 15px;
-                height: 100%;
-                transition: transform 0.3s ease;
+            .navbar {
+                background-color: var(--nav-bg) !important;
+                backdrop-filter: blur(10px);
+                z-index: 1000;
             }
-            .project-card:hover { transform: translateY(-10px); }
 
             #theme-toggle {
                 position: fixed;
@@ -167,7 +162,7 @@
                     </div>
                 </div>
                 <div class="imageWrapper">
-                    <img src="images/IMG_3587.GIF" alt="Hello" class="fullscreen-image" />
+                    <img src="images/IMG_3587.GIF" alt="Background" class="fullscreen-image" />
                 </div>
             </section>
 
@@ -196,13 +191,13 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-10">
                             <div class="mb-5">
-                                <h3 class="mb-3">🎓 M.A. in Information Technologies</h3>
-                                <p>Bar-Ilan University (2022-2024) | <strong>GPA: 93</strong></p>
+                                [cite_start]<h3 class="mb-3">🎓 M.A. in Information Technologies [cite: 8]</h3>
+                                [cite_start]<p>Bar-Ilan University (2022-2024) [cite: 9, 10] | [cite_start]<strong>GPA: 93 [cite: 11]</strong></p>
                             </div>
                             <div class="mb-4">
-                                <h3 class="mb-3">🎓 B.A. in Information System Management</h3>
-                                <p>Peres Academic Center (2019-2022) | <strong>GPA: 94</strong></p>
-                                <p class="text-muted small">• Graduation honors <br>• Dean's honor <br>• Excellent Final Project</p>
+                                [cite_start]<h3 class="mb-3">🎓 B.A. in Information System Management [cite: 12]</h3>
+                                [cite_start]<p>Peres Academic Center (2019-2022) [cite: 13, 14] | [cite_start]<strong>GPA: 94 [cite: 15]</strong></p>
+                                [cite_start]<p class="text-muted small">• Graduation honors [cite: 16] [cite_start]<br>• Dean's honor [cite: 17] [cite_start]<br>• Excellent Final Project [cite: 18]</p>
                             </div>
                         </div>
                     </div>
@@ -215,35 +210,35 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-9">
                             <div class="experience-item" data-aos="fade-up">
-                                <h5 class="exp-date">2025 - Present</h5>
-                                <h4>Technical Integration Engineer | Genie</h4>
+                                [cite_start]<h5 class="exp-date">2025 - Present [cite: 26]</h5>
+                                <h4>Technical Integration Engineer | [cite_start]Genie [cite: 25]</h4>
                                 <ul class="small text-muted">
-                                    [cite_start]<li>Led complex technical integrations within Cloud & Cyber environments. [cite: 25, 27]</li>
+                                    [cite_start]<li>Led complex technical integrations within Cloud & Cyber environments. [cite: 27]</li>
                                     [cite_start]<li>Managed and optimized Azure Cloud architectures. [cite: 28]</li>
                                     [cite_start]<li>Engineered automation workflows and API integrations. [cite: 29]</li>
                                 </ul>
                             </div>
                             <div class="experience-item" data-aos="fade-up">
-                                <h5 class="exp-date">2021 - Present</h5>
-                                <h4>Full Stack Instructor & Assistant | Peres Academic Center</h4>
+                                [cite_start]<h5 class="exp-date">2021 - Present [cite: 30]</h5>
+                                <h4>Full Stack Instructor & Assistant | [cite_start]Peres Academic Center [cite: 30]</h4>
                                 <ul class="small text-muted">
-                                    [cite_start]<li>Teaching Full development using HTML, React, JS, Node.js and PHP. [cite: 30, 32]</li>
+                                    [cite_start]<li>Teaching Full development using HTML, React, JS, Node.js and PHP. [cite: 32]</li>
                                     [cite_start]<li>Mentoring students in building complex Final Projects. [cite: 33]</li>
                                     [cite_start]<li>Instructing Data Structures, Algorithms, and Data Science (Python). [cite: 34]</li>
                                 </ul>
                             </div>
                             <div class="experience-item" data-aos="fade-up">
-                                <h5 class="exp-date">2024 - 2025</h5>
-                                <h4>Web Systems Specialist | Leaan Tickets</h4>
+                                [cite_start]<h5 class="exp-date">2024 - 2025 [cite: 50]</h5>
+                                <h4>Web Systems Specialist | [cite_start]Leaan Tickets [cite: 49]</h4>
                                 <ul class="small text-muted">
-                                    [cite_start]<li>Managing web content and platform optimization using Salat CMS. [cite: 49, 51]</li>
+                                    [cite_start]<li>Managing web content and platform optimization using Salat CMS. [cite: 51]</li>
                                     [cite_start]<li>Collaborating with Vivenu for API integration. [cite: 51]</li>
                                     [cite_start]<li>Conducting customizations with HTML and CSS. [cite: 52]</li>
                                 </ul>
                             </div>
                             <div class="experience-item" data-aos="fade-up">
-                                <h5 class="exp-date">2022 - 2023</h5>
-                                <h4>SRE & DevOps Engineer | IturanTech</h4>
+                                [cite_start]<h5 class="exp-date">2022 - 2023 [cite: 56]</h5>
+                                <h4>SRE & DevOps Engineer | [cite_start]IturanTech [cite: 55]</h4>
                                 <ul class="small text-muted">
                                     [cite_start]<li>Developed Python automation scripts for system management. [cite: 57]</li>
                                     [cite_start]<li>Managed production environments using Kubernetes, Grafana, and Prometheus. [cite: 58]</li>
@@ -254,58 +249,27 @@
                 </div>
             </section>
 
-            <section class="section-padding bg-light-variant" id="projects">
-                <div class="container">
-                    <h2 class="text-center mb-5" data-aos="fade-up">🚀 Portfolio Projects</h2>
-                    <div class="row g-4 text-center">
-                        <div class="col-lg-4 col-md-6" data-aos="fade-up">
-                            <div class="card project-card p-4"><h5>🎟️ SmartTicket</h5><a href="https://github.com/omrinaftali/SmartTicket" target="_blank" class="text-warning">GitHub</a></div>
-                        </div>
-                        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                            <div class="card project-card p-4"><h5>📊 Insightify</h5><a href="https://github.com/omrinaftali/Insightify" target="_blank" class="text-warning">GitHub</a></div>
-                        </div>
-                        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                            <div class="card project-card p-4"><h5>🗳️ Democracy Forecast</h5><a href="https://github.com/omrinaftali/Democracy-Forecast" target="_blank" class="text-warning">GitHub</a></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             <section class="section-padding text-center" id="skills">
                 <div class="container" data-aos="fade-up">
                     <h2 class="mb-5">🔧 Tech Expertise</h2>
                     <h6 class="mb-3 text-uppercase small text-muted">Core Languages</h6>
-                    <div class="skill-badge">Python</div> <div class="skill-badge">HTML 5</div> 
-                    <div class="skill-badge">JavaScript</div> <div class="skill-badge">React</div> 
-                    <div class="skill-badge">Node.js</div> <div class="skill-badge">Java</div>
-                    <div class="skill-badge">SQL</div> <div class="skill-badge">PHP</div> 
-                    <div class="skill-badge">C# / C++</div>
+                    [cite_start]<div class="skill-badge">Python [cite: 36][cite_start]</div> <div class="skill-badge">HTML 5 [cite: 37]</div> 
+                    [cite_start]<div class="skill-badge">JavaScript [cite: 38][cite_start]</div> <div class="skill-badge">React [cite: 39]</div> 
+                    [cite_start]<div class="skill-badge">Node.js [cite: 40][cite_start]</div> <div class="skill-badge">Java [cite: 41]</div>
+                    [cite_start]<div class="skill-badge">SQL [cite: 42][cite_start]</div> <div class="skill-badge">PHP [cite: 43]</div> 
+                    [cite_start]<div class="skill-badge">C# / C++ [cite: 44, 45]</div>
 
                     <h6 class="mt-5 mb-3 text-uppercase small text-muted">Tools & Technologies</h6>
-                    <div class="skill-badge">Docker</div> <div class="skill-badge">Grafana</div> 
-                    <div class="skill-badge">MongoDB</div> <div class="skill-badge">Pandas</div> 
-                    <div class="skill-badge">Prometheus</div>
-                </div>
-            </section>
-
-            <section class="section-padding text-center" id="opento">
-                <div class="container" data-aos="fade-up">
-                    <h2 class="mb-4">🤝 Open To</h2>
-                    <div class="skill-badge">Full Stack Developer</div>
-                    <div class="skill-badge">Backend Developer</div>
-                    <div class="skill-badge">Frontend Developer</div>
-                    <div class="skill-badge">Software Engineer</div>
+                    [cite_start]<div class="skill-badge">Docker [cite: 58][cite_start]</div> <div class="skill-badge">Grafana [cite: 58]</div> 
+                    [cite_start]<div class="skill-badge">MongoDB [cite: 33][cite_start]</div> <div class="skill-badge">Pandas [cite: 34]</div> 
+                    [cite_start]<div class="skill-badge">Prometheus [cite: 58]</div>
                 </div>
             </section>
         </main>
 
         <footer class="site-footer py-5">
             <div class="container text-center">
-                <p class="text-white">Omri Naftali | Bat-Yam | 054-7777442 | omrinaftali@gmail.com</p>
-                <div class="mt-3">
-                    <a href="https://linkedin.com/in/omrinaftali" class="bi-linkedin text-white me-3"></a>
-                    <a href="https://github.com/omrinaftali" class="bi-github text-white"></a>
-                </div>
+                [cite_start]<p class="text-white">Omri Naftali [cite: 19] | [cite_start]Bat-Yam [cite: 53] | [cite_start]054-7777442 [cite: 2] [cite_start]| omrinaftali@gmail.com [cite: 3]</p>
             </div>
         </footer>
 
