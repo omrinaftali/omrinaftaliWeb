@@ -37,25 +37,39 @@
                 font-family: 'Noto Sans JP', sans-serif;
             }
 
-            /* תיקון Hero - מרכוז מוחלט */
+            /* מרכוז מוחלט של תוכן ה-Hero */
             .hero {
+                display: flex !important;
+                align-items: center !important; /* מרכוז אנכי */
+                justify-content: center !important; /* מרכוז אופקי */
+                height: 100vh !important;
                 position: relative;
-                height: 100vh;
-                width: 100%;
-                overflow: hidden;
-                display: flex;
-                align-items: center; /* מרכוז אנכי */
-                justify-content: center; /* מרכוז אופקי */
+                padding: 0 !important; /* מבטל רווחים שדוחפים את הטקסט */
+            }
+
+            .heroText {
+            position: relative !important;
+            z-index: 3;
+            text-align: center;
+            width: 100%;
+            margin-top: 0 !important;
+            bottom: auto !important; /* מבטל הגדרות של התבנית שדוחפות למטה */
+            top: auto !important;
+        }
+            /* מוודא שהכותרת לא מקבלת Margin מיותר */
+            .heroText h1 {
+                margin-bottom: 10px !important;
+                padding: 0 !important;
             }
 
             .imageWrapper {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: 1;
-            }
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
 
             .fullscreen-image {
                 width: 100%;
@@ -65,16 +79,13 @@
             }
 
             /* Overlay כהה */
-            .imageWrapper::after {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.5);
-                z-index: 2;
-            }
+.imageWrapper::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.45); /* Overlay כהה */
+    z-index: 2;
+}
 
             .heroText {
                 position: relative;
@@ -117,25 +128,27 @@
         <button id="theme-toggle"><i class="bi-sun-fill" id="theme-icon"></i></button>
 
         <main>
-            <section class="hero" id="hero">
-                <div class="heroText">
-                    <h1 class="text-white mb-lg-4" data-aos="zoom-in" data-aos-delay="800">
-                        Omri Naftali
-                    </h1>
-                    <div data-aos="fade-up" data-aos-delay="1000">
-                        <p class="text-secondary-white-color d-inline-block mx-2">
-                            <strong class="custom-underline">Full Stack</strong> Developer
-                        </p>
-                        <p class="text-secondary-white-color d-inline-block mx-2">
-                            <strong class="custom-underline">Software</strong> Engineer
-                        </p>
-                    </div>
-                </div>
+<section class="hero" id="hero">
+    <div class="heroText">
+        <h1 class="text-white" data-aos="zoom-in" data-aos-delay="800">
+            Omri Naftali
+        </h1>
+        
+        <div data-aos="fade-up" data-aos-delay="1000">
+            <p class="text-secondary-white-color d-inline-block mx-2 mb-0">
+                <strong class="custom-underline">Full Stack</strong> Developer
+            </p>
+            <span class="text-white d-none d-md-inline">|</span> 
+            <p class="text-secondary-white-color d-inline-block mx-2 mb-0">
+                <strong class="custom-underline">Software</strong> Engineer
+            </p>
+        </div>
+    </div>
 
-                <div class="imageWrapper">
-                    <img src="images/IMG_3587.GIF" alt="Hello" class="fullscreen-image" />
-                </div>
-            </section>
+    <div class="imageWrapper">
+        <img src="images/IMG_3587.GIF" alt="Background" class="fullscreen-image" />
+    </div>
+</section>
 
             <nav class="navbar navbar-expand-lg shadow-lg sticky-top">
                 <div class="container">
