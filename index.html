@@ -37,7 +37,7 @@
                 font-family: 'Noto Sans JP', sans-serif;
             }
 
-            /* מרכוז מוחלט וסופי של ה-Hero */
+            /* --- תיקון סופי למרכוז ה-Hero --- */
             .hero {
                 position: relative;
                 height: 100vh !important;
@@ -52,12 +52,12 @@
                 position: absolute !important;
                 top: 50% !important;
                 left: 50% !important;
-                transform: translate(-50%, -50%) !important;
+                transform: translate(-50%, -50%) !important; /* זה מה שממרכז ב-100% */
                 z-index: 10;
                 text-align: center;
                 width: 100%;
-                margin: 0 !important;
                 bottom: auto !important;
+                margin: 0 !important;
             }
 
             .imageWrapper {
@@ -78,7 +78,7 @@
                 z-index: 2;
             }
 
-            /* Timeline: הקו והעיגולים */
+            /* --- Timeline: הקו והעיגולים --- */
             .experience-item {
                 position: relative;
                 padding-left: 35px;
@@ -97,7 +97,7 @@
                 background: var(--accent-color);
             }
 
-            /* Skills Badges */
+            /* --- Tech Expertise: Badges --- */
             .skill-badge {
                 display: inline-block;
                 padding: 6px 18px;
@@ -178,6 +178,7 @@
                             <li class="nav-item"><a class="nav-link" href="#Experience">Experience</a></li>
                             <li class="nav-item"><a class="nav-link" href="#projects">My Projects</a></li>
                             <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#opento">Open To</a></li>
                         </ul>
                         <a href="mailto:omrinaftali@gmail.com" class="btn btn-warning btn-sm ms-lg-3">Contact Me</a>
                     </div>
@@ -190,13 +191,13 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-10">
                             <div class="mb-5">
-                                <h3 class="mb-3">🎓 M.A. in Information Technologies</h3>
-                                <p>Bar-Ilan University | <strong>GPA: 93</strong></p>
+                               <h3 class="mb-3">🎓 M.A. in Information Technologies</h3>
+                               <p>Bar-Ilan University (2022-2024)  | <strong>GPA: 93</strong></p>
                             </div>
                             <div class="mb-4">
-                                <h3 class="mb-3">🎓 B.A. in Information System Management</h3>
-                                <p>Peres Academic Center | <strong>GPA: 94</strong></p>
-                                <p class="text-muted small">• Graduation honors <br>• Dean's honor <br>• Excellent Final Project</p>
+                                <h3 class="mb-3">🎓 B.A. in Information System Management </h3>
+                                <p>Peres Academic Center (2019-2022) | <strong>GPA: 94 </strong></p>
+                                <p class="text-muted small">• Graduation honors <br>• Dean's honor <br>• Excellent Final Project </p>
                             </div>
                         </div>
                     </div>
@@ -212,25 +213,35 @@
                                 <h5 class="exp-date">2025 - Present</h5>
                                 <h4>Technical Integration Engineer | Genie</h4>
                                 <ul class="small text-muted">
-                                    <li>Led technical integrations in Cloud & Cyber environments.</li>
-                                    <li>Managed Azure Cloud architectures.</li>
+                                    <li>Led complex technical integrations within Cloud & Cyber environments. </li>
+                                    <li>Managed and optimized Azure Cloud architectures. </li>
                                     <li>Engineered automation workflows and API integrations.</li>
                                 </ul>
                             </div>
                             <div class="experience-item" data-aos="fade-up">
-                                <h5 class="exp-date">2021 - Present</h5>
-                                <h4>Full Stack Instructor | Peres Academic Center</h4>
+                                <h5 class="exp-date">2021 - Present </h5>
+                                <h4>Full Stack Instructor & Assistant | Peres Academic Center </h4>
                                 <ul class="small text-muted">
-                                    <li>Teaching React, Node.js, and PHP.</li>
-                                    <li>Mentoring Final Projects and Data Structures.</li>
+                                    <li>Teaching Full development using HTML, React, JS, Node.js and PHP. </li>
+                                    <li>Mentoring students in building complex Final Projects. </li>
+                                    <li>Instructing Data Structures, Algorithms, and Data Science (Python).</li>
                                 </ul>
                             </div>
                             <div class="experience-item" data-aos="fade-up">
-                                <h5 class="exp-date">2022 - 2023</h5>
-                                <h4>SRE & DevOps Engineer | IturanTech</h4>
+                                <h5 class="exp-date">2024 - 2025 </h5>
+                                <h4>Web Systems Specialist | Leaan Tickets</h4>
                                 <ul class="small text-muted">
-                                    <li>Developed Python automation scripts.</li>
-                                    <li>Managed production environments using Kubernetes and Grafana.</li>
+                                    <li>Managing web content and platform optimization using Salat CMS. </li>
+                                    <li>Collaborating with Vivenu for API integration. </li>
+                                    <li>Conducting customizations with HTML and CSS.</li>
+                                </ul>
+                            </div>
+                            <div class="experience-item" data-aos="fade-up">
+                                <h5 class="exp-date">2022 - 2023 </h5>
+                                <h4>SRE & DevOps Engineer | IturanTech </h4>
+                                <ul class="small text-muted">
+                                    <li>Developed Python automation scripts for system management. </li>
+                                    <li>Managed production environments using Kubernetes, Grafana, and Prometheus.</li>
                                 </ul>
                             </div>
                         </div>
@@ -241,13 +252,26 @@
             <section class="section-padding text-center" id="skills">
                 <div class="container" data-aos="fade-up">
                     <h2 class="mb-5">🔧 Tech Expertise</h2>
-                    <div class="skill-badge">Python</div> <div class="skill-badge">JavaScript</div> 
-                    <div class="skill-badge">React</div> <div class="skill-badge">Node.js</div> 
-                    <div class="skill-badge">SQL</div> <div class="skill-badge">Docker</div>
-                    <div class="skill-badge">Kubernetes</div> <div class="skill-badge">Azure</div>
+                    <h6 class="mb-3 text-uppercase small text-muted">Core Languages</h6>
+                    <div class="skill-badge">Python </div> <div class="skill-badge">HTML 5 </div> 
+                    <div class="skill-badge">JavaScript</div> <div class="skill-badge">React </div> 
+                    <div class="skill-badge">Node.js</div> <div class="skill-badge">Java </div>
+                    <div class="skill-badge">SQL </div> <div class="skill-badge">PHP</div> 
+                    <div class="skill-badge">C# / C++</div>
+
+                    <h6 class="mt-5 mb-3 text-uppercase small text-muted">Tools & Technologies</h6>
+                    <div class="skill-badge">Docker</div> <div class="skill-badge">Grafana</div> 
+                    <div class="skill-badge">MongoDB</div> <div class="skill-badge">Pandas</div> 
+                    <div class="skill-badge">Prometheus</div>
                 </div>
             </section>
         </main>
+
+        <footer class="site-footer py-5">
+            <div class="container text-center">
+                <p class="text-white">Omri Naftali| Bat-Yam| 054-7777442| omrinaftali@gmail.com </p>
+            </div>
+        </footer>
 
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
@@ -257,8 +281,11 @@
             const themeIcon = document.getElementById('theme-icon');
             themeToggle.addEventListener('click', () => {
                 const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-                document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+                const newTheme = isDark ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
                 themeIcon.className = isDark ? 'bi-sun-fill' : 'bi-moon-stars-fill';
+                themeToggle.style.background = isDark ? '#f1c40f' : '#fff';
             });
             AOS.init({ duration: 800, once: true });
         </script>
