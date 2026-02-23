@@ -37,15 +37,15 @@
                 font-family: 'Noto Sans JP', sans-serif;
             }
 
-            /* תיקון Hero ותמונת רקע */
+            /* תיקון Hero - מרכוז מוחלט */
             .hero {
                 position: relative;
                 height: 100vh;
                 width: 100%;
                 overflow: hidden;
                 display: flex;
-                align-items: center;
-                justify-content: center;
+                align-items: center; /* מרכוז אנכי */
+                justify-content: center; /* מרכוז אופקי */
             }
 
             .imageWrapper {
@@ -64,7 +64,7 @@
                 display: block;
             }
 
-            /* החזרת המצב הכהה לתמונה */
+            /* Overlay כהה */
             .imageWrapper::after {
                 content: "";
                 position: absolute;
@@ -72,7 +72,7 @@
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background: rgba(0, 0, 0, 0.5); /* Overlay כהה */
+                background: rgba(0, 0, 0, 0.5);
                 z-index: 2;
             }
 
@@ -80,6 +80,7 @@
                 position: relative;
                 z-index: 3;
                 text-align: center;
+                width: 100%; /* מוודא שהטקסט תופס את כל הרוחב למרכוז */
             }
 
             .navbar {
@@ -107,68 +108,33 @@
                 box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             }
 
-            /* ניסיון תעסוקתי - Timeline */
-            .experience-item {
-                position: relative;
-                padding-left: 35px;
-                border-left: 2px solid var(--accent-color);
-                margin-bottom: 30px;
-            }
-            .experience-item::before {
-                content: "";
-                position: absolute;
-                left: -9px;
-                top: 5px;
-                width: 16px;
-                height: 16px;
-                border-radius: 50%;
-                background: var(--accent-color);
-            }
-
-            .project-card {
-                background-color: var(--card-bg);
-                border: 1px solid rgba(128, 128, 128, 0.1);
-                border-radius: 15px;
-                height: 100%;
-                transition: transform 0.3s ease;
-            }
-            .project-card:hover { transform: translateY(-10px); }
-
-            .skill-badge {
-                display: inline-block;
-                padding: 5px 15px;
-                margin: 4px;
-                border: 1px solid var(--accent-color);
-                border-radius: 50px;
-                font-size: 0.85rem;
-            }
-
             .section-padding { padding: 90px 0; }
             .custom-underline { border-bottom: 3px solid var(--accent-color); }
         </style>
     </head>
     
-    <body>
+    body>
         <button id="theme-toggle"><i class="bi-sun-fill" id="theme-icon"></i></button>
 
         <main>
-<section class="hero" id="hero">
+            <section class="hero" id="hero">
                 <div class="heroText">
-                    <h1 class="text-white mt-5 mb-lg-4" data-aos="zoom-in" data-aos-delay="800">
+                    <h1 class="text-white mb-lg-4" data-aos="zoom-in" data-aos-delay="800">
                         Omri Naftali
                     </h1>
-                    <p class="text-secondary-white-color" data-aos="fade-up" data-aos-delay="1000">
-                        <strong class="custom-underline">Full Stack</strong> Developer
-                    </p>
-                        <p class="text-secondary-white-color" data-aos="fade-up" data-aos-delay="1000">
-                        <strong class="custom-underline">Software</strong> Engineer
-                    </p>
+                    <div data-aos="fade-up" data-aos-delay="1000">
+                        <p class="text-secondary-white-color d-inline-block mx-2">
+                            <strong class="custom-underline">Full Stack</strong> Developer
+                        </p>
+                        <p class="text-secondary-white-color d-inline-block mx-2">
+                            <strong class="custom-underline">Software</strong> Engineer
+                        </p>
+                    </div>
                 </div>
 
                 <div class="imageWrapper">
                     <img src="images/IMG_3587.GIF" alt="Hello" class="fullscreen-image" />
                 </div>
-                <div class="overlay"></div>
             </section>
 
             <nav class="navbar navbar-expand-lg shadow-lg sticky-top">
