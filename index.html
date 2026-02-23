@@ -37,61 +37,40 @@
                 font-family: 'Noto Sans JP', sans-serif;
             }
 
-            /* מרכוז מוחלט של תוכן ה-Hero */
+            /* מרכוז מוחלט של Hero */
             .hero {
                 display: flex !important;
-                align-items: center !important; /* מרכוז אנכי */
-                justify-content: center !important; /* מרכוז אופקי */
+                align-items: center !important;
+                justify-content: center !important;
                 height: 100vh !important;
                 position: relative;
-                padding: 0 !important; /* מבטל רווחים שדוחפים את הטקסט */
-            }
-
-            .heroText {
-            position: relative !important;
-            z-index: 3;
-            text-align: center;
-            width: 100%;
-            margin-top: 0 !important;
-            bottom: auto !important; /* מבטל הגדרות של התבנית שדוחפות למטה */
-            top: auto !important;
-        }
-            /* מוודא שהכותרת לא מקבלת Margin מיותר */
-            .heroText h1 {
-                margin-bottom: 10px !important;
                 padding: 0 !important;
             }
 
-            .imageWrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-
-            .fullscreen-image {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                display: block;
-            }
-
-            /* Overlay כהה */
-.imageWrapper::after {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.45); /* Overlay כהה */
-    z-index: 2;
-}
-
             .heroText {
-                position: relative;
+                position: relative !important;
                 z-index: 3;
                 text-align: center;
-                width: 100%; /* מוודא שהטקסט תופס את כל הרוחב למרכוז */
+                width: 100%;
+                bottom: auto !important;
+            }
+
+            .imageWrapper {
+                position: absolute;
+                top: 0; left: 0; width: 100%; height: 100%;
+                z-index: 1;
+            }
+
+            .fullscreen-image {
+                width: 100%; height: 100%; object-fit: cover; display: block;
+            }
+
+            .imageWrapper::after {
+                content: "";
+                position: absolute;
+                top: 0; left: 0; width: 100%; height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 2;
             }
 
             .navbar {
@@ -99,6 +78,52 @@
                 backdrop-filter: blur(10px);
                 z-index: 1000;
             }
+
+            /* --- Timeline: הקו והעיגולים שביקשת --- */
+            .experience-item {
+                position: relative;
+                padding-left: 35px;
+                border-left: 2px solid var(--accent-color);
+                margin-bottom: 30px;
+                text-align: left; /* יישור טקסט לשמאל בתוך ציר הזמן */
+            }
+            .experience-item::before {
+                content: "";
+                position: absolute;
+                left: -9px;
+                top: 5px;
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                background: var(--accent-color);
+            }
+
+            /* --- Tech Expertise: עיצוב ה-Badges המקצועי --- */
+            .skill-badge {
+                display: inline-block;
+                padding: 6px 18px;
+                margin: 5px;
+                border: 1px solid var(--accent-color);
+                border-radius: 50px;
+                font-size: 0.9rem;
+                transition: all 0.3s ease;
+                font-weight: 400;
+                color: var(--text-color);
+            }
+            .skill-badge:hover {
+                background-color: var(--accent-color);
+                color: #000 !important;
+                transform: translateY(-3px);
+            }
+
+            .project-card {
+                background-color: var(--card-bg);
+                border: 1px solid rgba(128, 128, 128, 0.1);
+                border-radius: 15px;
+                height: 100%;
+                transition: transform 0.3s ease;
+            }
+            .project-card:hover { transform: translateY(-10px); }
 
             #theme-toggle {
                 position: fixed;
@@ -124,42 +149,34 @@
         </style>
     </head>
     
-    body>
+    <body>
         <button id="theme-toggle"><i class="bi-sun-fill" id="theme-icon"></i></button>
 
         <main>
-<section class="hero" id="hero">
-    <div class="heroText">
-        <h1 class="text-white" data-aos="zoom-in" data-aos-delay="800">
-            Omri Naftali
-        </h1>
-        
-        <div data-aos="fade-up" data-aos-delay="1000">
-            <p class="text-secondary-white-color d-inline-block mx-2 mb-0">
-                <strong class="custom-underline">Full Stack</strong> Developer
-            </p>
-            <span class="text-white d-none d-md-inline">|</span> 
-            <p class="text-secondary-white-color d-inline-block mx-2 mb-0">
-                <strong class="custom-underline">Software</strong> Engineer
-            </p>
-        </div>
-    </div>
-
-    <div class="imageWrapper">
-        <img src="images/IMG_3587.GIF" alt="Background" class="fullscreen-image" />
-    </div>
-</section>
+            <section class="hero" id="hero">
+                <div class="heroText">
+                    <h1 class="text-white mb-2" data-aos="zoom-in" data-aos-delay="800">Omri Naftali</h1>
+                    <div data-aos="fade-up" data-aos-delay="1000">
+                        <p class="text-secondary-white-color d-inline-block mx-2 mb-0">
+                            <strong class="custom-underline">Full Stack</strong> Developer
+                        </p>
+                        <span class="text-white d-none d-md-inline">|</span> 
+                        <p class="text-secondary-white-color d-inline-block mx-2 mb-0">
+                            <strong class="custom-underline">Software</strong> Engineer
+                        </p>
+                    </div>
+                </div>
+                <div class="imageWrapper">
+                    <img src="images/IMG_3587.GIF" alt="Hello" class="fullscreen-image" />
+                </div>
+            </section>
 
             <nav class="navbar navbar-expand-lg shadow-lg sticky-top">
                 <div class="container">
-                    <a class="navbar-brand" href="#">
-                        <strong>Omri Naftali</strong>
-                    </a>
-
+                    <a class="navbar-brand" href="#"><strong>Omri Naftali</strong></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav mx-auto">
                             <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
@@ -175,140 +192,80 @@
 
             <section class="section-padding text-center" id="about">
                 <div class="container" data-aos="fade-up">
-                    <h2 class="mb-5" style="font-weight: 700;">👋 About</h2>
+                    <h2 class="mb-5" style="font-weight: 700;">👋 About & Education</h2>
                     <div class="row justify-content-center">
                         <div class="col-lg-10">
                             <div class="mb-5">
                                 <h3 class="mb-3">🎓 M.A. in Information Technologies</h3>
-                                <p>Bar-Ilan University (2022-2024)| <strong>GPA: 93</strong> </p>
+                                <p>Bar-Ilan University (2022-2024) | <strong>GPA: 93</strong></p>
                             </div>
                             <div class="mb-4">
                                 <h3 class="mb-3">🎓 B.A. in Information System Management</h3>
-                                <p>Peres Academic Center (2019-2022) | <strong>GPA: 94</strong> </p>
-                                <p class="text-muted small">• Graduation honors <br>• Dean's honor  <br>• Excellent Final Project </p>
+                                <p>Peres Academic Center (2019-2022) | <strong>GPA: 94</strong></p>
+                                <p class="text-muted small">• Graduation honors <br>• Dean's honor <br>• Excellent Final Project</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-                <section class="section-padding text-center" id="Experience">
+            <section class="section-padding" id="Experience">
                 <div class="container">
                     <h2 class="text-center mb-5" data-aos="fade-up">💼 Professional Experience</h2>
                     <div class="row justify-content-center">
                         <div class="col-lg-9">
-                            
                             <div class="experience-item" data-aos="fade-up">
-                                <h5 class="exp-date">2025 - Present </h5>
-                                <h4>Technical Integration Engineer | Genie </h4>
+                                <h5 class="exp-date">2025 - Present</h5>
+                                <h4>Technical Integration Engineer | Genie</h4>
                                 <ul class="small text-muted">
-                                    <li>Led complex technical integrations within Cloud & Cyber environments. </li>
-                                    <li>Managed and optimized Azure Cloud architectures. </li>
-                                    <li>Engineered automation workflows and API integrations. </li>
+                                    [cite_start]<li>Led complex technical integrations within Cloud & Cyber environments. [cite: 25, 27]</li>
+                                    [cite_start]<li>Managed and optimized Azure Cloud architectures. [cite: 28]</li>
+                                    [cite_start]<li>Engineered automation workflows and API integrations. [cite: 29]</li>
                                 </ul>
                             </div>
-
                             <div class="experience-item" data-aos="fade-up">
-                                <h5 class="exp-date">2021 - Present </h5>
+                                <h5 class="exp-date">2021 - Present</h5>
                                 <h4>Full Stack Instructor & Assistant | Peres Academic Center</h4>
                                 <ul class="small text-muted">
-                                    <li>Teaching Full development using HTML, React, JS, Node.js and PHP. </li>
-                                    <li>Mentoring students in building complex Final Projects.</li>
-                                    <li>Instructing Data Structures, Algorithms, and Data Science (Python).</li>
+                                    [cite_start]<li>Teaching Full development using HTML, React, JS, Node.js and PHP. [cite: 30, 32]</li>
+                                    [cite_start]<li>Mentoring students in building complex Final Projects. [cite: 33]</li>
+                                    [cite_start]<li>Instructing Data Structures, Algorithms, and Data Science (Python). [cite: 34]</li>
                                 </ul>
                             </div>
-
                             <div class="experience-item" data-aos="fade-up">
-                                <h5 class="exp-date">2024 - 2025 </h5>
-                                <h4>Web Systems Specialist | Leaan Tickets </h4>
+                                <h5 class="exp-date">2024 - 2025</h5>
+                                <h4>Web Systems Specialist | Leaan Tickets</h4>
                                 <ul class="small text-muted">
-                                    <li>Managing web content and platform optimization using Salat CMS.</li>
-                                    <li>Collaborating with Vivenu for API integration.</li>
-                                    <li>Conducting customizations with HTML and CSS. </li>
+                                    [cite_start]<li>Managing web content and platform optimization using Salat CMS. [cite: 49, 51]</li>
+                                    [cite_start]<li>Collaborating with Vivenu for API integration. [cite: 51]</li>
+                                    [cite_start]<li>Conducting customizations with HTML and CSS. [cite: 52]</li>
                                 </ul>
                             </div>
-
                             <div class="experience-item" data-aos="fade-up">
-                                <h5 class="exp-date">2022 - 2023 </h5>
-                                <h4>SRE & DevOps Engineer | IturanTech </h4>
+                                <h5 class="exp-date">2022 - 2023</h5>
+                                <h4>SRE & DevOps Engineer | IturanTech</h4>
                                 <ul class="small text-muted">
-                                    <li>Developed Python automation scripts for system management. </li>
-                                    <li>Managed production environments using Kubernetes, Grafana, and Prometheus.</li>
+                                    [cite_start]<li>Developed Python automation scripts for system management. [cite: 57]</li>
+                                    [cite_start]<li>Managed production environments using Kubernetes, Grafana, and Prometheus. [cite: 58]</li>
                                 </ul>
                             </div>
-
                         </div>
                     </div>
                 </div>
             </section>
 
-<section class="section-padding" id="projects">
+            <section class="section-padding bg-light-variant" id="projects">
                 <div class="container">
-                    <h2 class="text-center mb-5" data-aos="fade-up">💼 Portfolio Projects</h2>
-                    <div class="row g-4">
+                    <h2 class="text-center mb-5" data-aos="fade-up">🚀 Portfolio Projects</h2>
+                    <div class="row g-4 text-center">
+                        <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                            <div class="card project-card p-4"><h5>🎟️ SmartTicket</h5><a href="https://github.com/omrinaftali/SmartTicket" target="_blank" class="text-warning">GitHub</a></div>
+                        </div>
                         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                            <div class="card project-card p-4">
-                                <div>
-                                    <h5 class="mb-3">🎟️ SmartTicket</h5>
-                                    <p class="text-muted small">Comprehensive ticket management system. Backend logic for seamless user experience.</p>
-                                </div>
-                                <div class="mt-3">
-                                    <p class="small mb-2"><strong>Stack:</strong> Node.js, MongoDB, JS</p>
-                                    <a href="https://github.com/omrinaftali/SmartTicket" target="_blank" class="project-link">View Project <i class="bi-github"></i></a>
-                                </div>
-                            </div>
+                            <div class="card project-card p-4"><h5>📊 Insightify</h5><a href="https://github.com/omrinaftali/Insightify" target="_blank" class="text-warning">GitHub</a></div>
                         </div>
-
                         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                            <div class="card project-card p-4">
-                                <div>
-                                    <h5 class="mb-3">📊 Insightify</h5>
-                                    <p class="text-muted small">Data analysis and visualization tool focused on extracting actionable insights.</p>
-                                </div>
-                                <div class="mt-3">
-                                    <p class="small mb-2"><strong>Stack:</strong> Python, Pandas, Matplotlib</p>
-                                    <a href="https://github.com/omrinaftali/Insightify" target="_blank" class="project-link">View Project <i class="bi-github"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                            <div class="card project-card p-4">
-                                <div>
-                                    <h5 class="mb-3">🗳️ Democracy Forecast</h5>
-                                    <p class="text-muted small">Using economic indicators to predict global democracy trends through data science.</p>
-                                </div>
-                                <div class="mt-3">
-                                    <p class="small mb-2"><strong>Stack:</strong> Python, Scikit-learn</p>
-                                    <a href="https://github.com/omrinaftali/Democracy-Forecast" target="_blank" class="project-link">View Project <i class="bi-github"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                            <div class="card project-card p-4">
-                                <div>
-                                    <h5 class="mb-3">📱 Drive Your Change</h5>
-                                    <p class="text-muted small">A gamified mobile application concept aimed at improving road safety and driving habits.</p>
-                                </div>
-                                <div class="mt-3">
-                                    <p class="small mb-2"><strong>Stack:</strong> Android Studio, UI/UX Design</p>
-                                    <a href="https://github.com/omrinaftali/DriveYourChangeApp" target="_blank" class="project-link">View Project <i class="bi-github"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-                            <div class="card project-card p-4">
-                                <div>
-                                    <h5 class="mb-3">📝 Insert Student List</h5>
-                                    <p class="text-muted small">Dynamic web form that handles data insertion into a backend database structure.</p>
-                                </div>
-                                <div class="mt-3">
-                                    <p class="small mb-2"><strong>Stack:</strong> HTML, JS, Backend Integration</p>
-                                    <a href="https://github.com/omrinaftali/InsertStudntList-HTML" target="_blank" class="project-link">View Project <i class="bi-github"></i></a>
-                                </div>
-                            </div>
+                            <div class="card project-card p-4"><h5>🗳️ Democracy Forecast</h5><a href="https://github.com/omrinaftali/Democracy-Forecast" target="_blank" class="text-warning">GitHub</a></div>
                         </div>
                     </div>
                 </div>
@@ -316,33 +273,25 @@
 
             <section class="section-padding text-center" id="skills">
                 <div class="container" data-aos="fade-up">
-                    <h2 class="mb-5">🔧 Tech Expertise </h2>
-                    <h6 class="mt-5 mb-3 text-uppercase small text-muted">Core Languages</h6>
-                    <div class="skill-badge">Python </div> 
-                    <div class="skill-badge">HTML 5</div> 
-                    <div class="skill-badge">JavaScript </div> 
-                    <div class="skill-badge">React </div> 
-                    <div class="skill-badge">Java </div>
-                    <div class="skill-badge">SQL </div> 
-                    <div class="skill-badge">SQL </div>
-                    <div class="skill-badge">PHP </div> 
-                    <div class="skill-badge">PHP </div>
-                    <div class="skill-badge">C# / C++ </div>                     
+                    <h2 class="mb-5">🔧 Tech Expertise</h2>
+                    <h6 class="mb-3 text-uppercase small text-muted">Core Languages</h6>
+                    <div class="skill-badge">Python</div> <div class="skill-badge">HTML 5</div> 
+                    <div class="skill-badge">JavaScript</div> <div class="skill-badge">React</div> 
+                    <div class="skill-badge">Node.js</div> <div class="skill-badge">Java</div>
+                    <div class="skill-badge">SQL</div> <div class="skill-badge">PHP</div> 
+                    <div class="skill-badge">C# / C++</div>
 
-                    <h6 class="mt-5 mb-3 text-uppercase small text-muted">Tools & Technologies</h6>            
-                    <div class="skill-badge">Docker</div>
-                    <div class="skill-badge">Grafana</div> 
-                    <div class="skill-badge">MongoDB</div>
-                    <div class="skill-badge">Pandas</div> 
-                    <div class="skill-badge">Promethues</div>
-
+                    <h6 class="mt-5 mb-3 text-uppercase small text-muted">Tools & Technologies</h6>
+                    <div class="skill-badge">Docker</div> <div class="skill-badge">Grafana</div> 
+                    <div class="skill-badge">MongoDB</div> <div class="skill-badge">Pandas</div> 
+                    <div class="skill-badge">Prometheus</div>
                 </div>
             </section>
 
             <section class="section-padding text-center" id="opento">
                 <div class="container" data-aos="fade-up">
-                    <h2 class="mb-5">🔧 Open To </h2>
-                    <div class="skill-badge">Full Stack Developer</div> 
+                    <h2 class="mb-4">🤝 Open To</h2>
+                    <div class="skill-badge">Full Stack Developer</div>
                     <div class="skill-badge">Backend Developer</div>
                     <div class="skill-badge">Frontend Developer</div>
                     <div class="skill-badge">Software Engineer</div>
@@ -352,7 +301,7 @@
 
         <footer class="site-footer py-5">
             <div class="container text-center">
-                <p class="text-white">Omri Naftali | Bat-Yam |  054-7777442 | omrinaftali@gmail.com</p>
+                <p class="text-white">Omri Naftali | Bat-Yam | 054-7777442 | omrinaftali@gmail.com</p>
                 <div class="mt-3">
                     <a href="https://linkedin.com/in/omrinaftali" class="bi-linkedin text-white me-3"></a>
                     <a href="https://github.com/omrinaftali" class="bi-github text-white"></a>
@@ -364,7 +313,6 @@
         <script src="js/bootstrap.bundle.min.js"></script>
         <script src="js/aos.js"></script>
         <script>
-            // Dark Mode Logic
             const themeToggle = document.getElementById('theme-toggle');
             const themeIcon = document.getElementById('theme-icon');
             themeToggle.addEventListener('click', () => {
