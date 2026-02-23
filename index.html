@@ -42,7 +42,6 @@
                 backdrop-filter: blur(10px);
             }
 
-            /* כפתור מצב לילה צף */
             #theme-toggle {
                 position: fixed;
                 bottom: 25px;
@@ -62,54 +61,46 @@
                 justify-content: center;
                 transition: all 0.3s ease;
             }
-            #theme-toggle:hover { transform: scale(1.1) rotate(15deg); }
 
-            /* Hero Section */
-            .imageWrapper {
+            /* Timeline Design for Experience */
+            .experience-item {
                 position: relative;
-                width: 100%;
-                height: 100vh;
-                overflow: hidden;
+                padding-left: 30px;
+                border-left: 2px solid var(--accent-color);
+                margin-bottom: 40px;
             }
-            .imageWrapper::after {
+            .experience-item::before {
                 content: "";
                 position: absolute;
-                top: 0; left: 0; width: 100%; height: 100%;
-                background: rgba(0,0,0,0.45);
+                left: -9px;
+                top: 0;
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                background: var(--accent-color);
             }
-            .fullscreen-image {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
+            .exp-date {
+                font-size: 0.85rem;
+                font-weight: bold;
+                color: var(--accent-color);
+                text-transform: uppercase;
             }
 
-            /* כרטיסיות פרויקטים משודרגות */
             .project-card {
                 background-color: var(--card-bg);
                 border: 1px solid rgba(128, 128, 128, 0.1);
                 border-radius: 15px;
-                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                transition: all 0.4s ease;
                 height: 100%;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
             }
             .project-card:hover {
-                transform: translateY(-12px);
-                box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+                transform: translateY(-10px);
                 border-color: var(--accent-color);
             }
-            .project-link {
-                color: var(--accent-color);
-                text-decoration: none;
-                font-weight: 700;
-                text-transform: uppercase;
-                font-size: 0.85rem;
-                letter-spacing: 1px;
-            }
-            .project-link:hover { text-decoration: underline; }
 
-            /* תגיות כישורים */
             .skill-badge {
                 display: inline-block;
                 padding: 5px 15px;
@@ -118,12 +109,6 @@
                 border: 1px solid var(--accent-color);
                 border-radius: 50px;
                 font-size: 0.85rem;
-                font-weight: 400;
-                transition: 0.3s;
-            }
-            .skill-badge:hover {
-                background: var(--accent-color);
-                color: #000;
             }
 
             .section-padding { padding: 80px 0; }
@@ -132,21 +117,16 @@
     </head>
     
     <body>
-        <button id="theme-toggle">
-            <i class="bi-sun-fill" id="theme-icon"></i>
-        </button>
+        <button id="theme-toggle"><i class="bi-sun-fill" id="theme-icon"></i></button>
 
         <main>
             <section class="hero" id="hero">
                 <div class="heroText">
-                    <h1 class="text-white mt-5 mb-lg-4" data-aos="zoom-in" data-aos-delay="800">
-                        Omri Naftali
-                    </h1>
+                    <h1 class="text-white mt-5 mb-lg-4" data-aos="zoom-in" data-aos-delay="800">Omri Naftali</h1>
                     <p class="text-secondary-white-color" data-aos="fade-up" data-aos-delay="1000">
-                        <strong class="custom-underline">Full Stack</strong> Developer
+                        <strong class="custom-underline">Full Stack</strong> Developer | Software Engineer
                     </p>
                 </div>
-
                 <div class="imageWrapper">
                     <img src="images/IMG_3587.GIF" alt="Hello" class="fullscreen-image" />
                 </div>
@@ -161,101 +141,63 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav mx-auto">
                             <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
                             <li class="nav-item"><a class="nav-link" href="#projects">Portfolio</a></li>
                             <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#opento">Open To</a></li>
                         </ul>
                         <a href="mailto:omrinaftali@gmail.com" class="btn btn-warning btn-sm ms-lg-3">Let's Talk</a>
                     </div>
                 </div>
             </nav>
 
-            <section class="section-padding text-center" id="about">
-                <div class="container" data-aos="fade-up">
-                    <h2 class="mb-5" style="font-weight: 700;">👋 Personal Profile</h2>
+            <section class="section-padding" id="experience">
+                <div class="container">
+                    <h2 class="text-center mb-5" data-aos="fade-up">💼 Professional Experience</h2>
                     <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="mb-4">
-                                <h5>🎓 M.A. in Information Technologies</h5>
-                                <p class="text-muted">Bar-Ilan University | GPA: 93</p>
+                        <div class="col-lg-10">
+                            
+                            <div class="experience-item" data-aos="fade-up">
+                                <span class="exp-date">2025 - Present</span>
+                                <h4>Technical Integration Engineer | Genie</h4>
+                                <p class="text-muted">Leading complex technical integrations in Cloud & Cyber environments. [cite: 25, 27] Managed Azure Cloud architectures and engineered automation workflows with API integrations. [cite: 28, 29]</p>
                             </div>
-                            <div class="mb-4">
-                                <h5>🎓 B.A. in Information System Management</h5>
-                                <p class="text-muted">Peres Academic Center | GPA: 94 – Dean’s Honor List</p>
+
+                            <div class="experience-item" data-aos="fade-up">
+                                <span class="exp-date">2024 - 2025</span>
+                                <h4>Web Systems Specialist | Leaan Tickets</h4>
+                                <p class="text-muted">Managed web content using Salat CMS and collaborated on Vivenu API integrations. [cite: 49, 51] Performed UI enhancements using HTML/CSS and optimized data workflows. [cite: 52, 53]</p>
                             </div>
+
+                            <div class="experience-item" data-aos="fade-up">
+                                <span class="exp-date">2021 - Present</span>
+                                <h4>Full Stack Instructor & Assistant | Peres Academic Center</h4>
+                                <p class="text-muted">Teaching Full Stack development (React, Node.js, PHP) and mentoring students on final projects. [cite: 30, 32, 33] Instructing Data Structures, Algorithms, and Data Science using Python/Pandas. [cite: 34]</p>
+                            </div>
+
+                            <div class="experience-item" data-aos="fade-up">
+                                <span class="exp-date">2022 - 2023</span>
+                                <h4>SRE & DevOps Engineer | IturanTech</h4>
+                                <p class="text-muted">Developed Python automation scripts for system management. [cite: 54, 57] Managed production environments with Kubernetes and monitored health via Grafana/Prometheus. [cite: 58]</p>
+                            </div>
+
+                            <div class="experience-item" data-aos="fade-up">
+                                <span class="exp-date">2021 - 2022</span>
+                                <h4>QA Mobile (UI/UX Focus) | IturanTech</h4>
+                                <p class="text-muted">Executed comprehensive UI/UX testing for Android and iOS, ensuring pixel-perfect implementation and refining user interactions. [cite: 61, 63, 64]</p>
+                            </div>
+
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section class="section-padding" id="projects">
+            <section class="section-padding bg-light-variant" id="projects">
                 <div class="container">
-                    <h2 class="text-center mb-5" data-aos="fade-up">💼 Portfolio Projects</h2>
+                    <h2 class="text-center mb-5" data-aos="fade-up">🚀 Key Projects</h2>
                     <div class="row g-4">
-                        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                            <div class="card project-card p-4">
-                                <div>
-                                    <h5 class="mb-3">🎟️ SmartTicket</h5>
-                                    <p class="text-muted small">Comprehensive ticket management system. Backend logic for seamless user experience.</p>
-                                </div>
-                                <div class="mt-3">
-                                    <p class="small mb-2"><strong>Stack:</strong> Node.js, MongoDB, JS</p>
-                                    <a href="https://github.com/omrinaftali/SmartTicket" target="_blank" class="project-link">View Project <i class="bi-github"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                            <div class="card project-card p-4">
-                                <div>
-                                    <h5 class="mb-3">📊 Insightify</h5>
-                                    <p class="text-muted small">Data analysis and visualization tool focused on extracting actionable insights.</p>
-                                </div>
-                                <div class="mt-3">
-                                    <p class="small mb-2"><strong>Stack:</strong> Python, Pandas, Matplotlib</p>
-                                    <a href="https://github.com/omrinaftali/Insightify" target="_blank" class="project-link">View Project <i class="bi-github"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                            <div class="card project-card p-4">
-                                <div>
-                                    <h5 class="mb-3">🗳️ Democracy Forecast</h5>
-                                    <p class="text-muted small">Using economic indicators to predict global democracy trends through data science.</p>
-                                </div>
-                                <div class="mt-3">
-                                    <p class="small mb-2"><strong>Stack:</strong> Python, Scikit-learn</p>
-                                    <a href="https://github.com/omrinaftali/Democracy-Forecast" target="_blank" class="project-link">View Project <i class="bi-github"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                            <div class="card project-card p-4">
-                                <div>
-                                    <h5 class="mb-3">📱 Drive Your Change</h5>
-                                    <p class="text-muted small">A gamified mobile application concept aimed at improving road safety and driving habits.</p>
-                                </div>
-                                <div class="mt-3">
-                                    <p class="small mb-2"><strong>Stack:</strong> Android Studio, UI/UX Design</p>
-                                    <a href="https://github.com/omrinaftali/DriveYourChangeApp" target="_blank" class="project-link">View Project <i class="bi-github"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-                            <div class="card project-card p-4">
-                                <div>
-                                    <h5 class="mb-3">📝 Insert Student List</h5>
-                                    <p class="text-muted small">Dynamic web form that handles data insertion into a backend database structure.</p>
-                                </div>
-                                <div class="mt-3">
-                                    <p class="small mb-2"><strong>Stack:</strong> HTML, JS, Backend Integration</p>
-                                    <a href="https://github.com/omrinaftali/InsertStudntList-HTML" target="_blank" class="project-link">View Project <i class="bi-github"></i></a>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="col-lg-4 col-md-6" data-aos="fade-up"><div class="card project-card p-4"><h5>🎟️ SmartTicket</h5><p class="text-muted small">Node.js & MongoDB ticket management system.</p><a href="https://github.com/omrinaftali/SmartTicket" target="_blank" class="text-warning">GitHub →</a></div></div>
+                        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100"><div class="card project-card p-4"><h5>📊 Insightify</h5><p class="text-muted small">Python-based data analysis with Pandas.</p><a href="https://github.com/omrinaftali/Insightify" target="_blank" class="text-warning">GitHub →</a></div></div>
+                        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200"><div class="card project-card p-4"><h5>🗳️ Democracy Forecast</h5><p class="text-muted small">Data science project on global trends.</p><a href="https://github.com/omrinaftali/Democracy-Forecast" target="_blank" class="text-warning">GitHub →</a></div></div>
                     </div>
                 </div>
             </section>
@@ -263,76 +205,37 @@
             <section class="section-padding text-center" id="skills">
                 <div class="container" data-aos="fade-up">
                     <h2 class="mb-5">🔧 Tech Stack</h2>
-                    <div class="row justify-content-center">
-                        <div class="col-lg-10">
-                            <h6 class="mb-3 text-uppercase small text-muted">Core Languages</h6>
-                            <div class="skill-badge">JavaScript</div> <div class="skill-badge">Python</div>
-                            <div class="skill-badge">SQL</div> <div class="skill-badge">Java</div>
-                            <div class="skill-badge">PHP</div> <div class="skill-badge">C# / C++</div>
-                            
-                            <h6 class="mt-5 mb-3 text-uppercase small text-muted">Tools & Technologies</h6>
-                            <div class="skill-badge">Node.js</div> <div class="skill-badge">React</div>
-                            <div class="skill-badge">MongoDB</div> <div class="skill-badge">Docker</div>
-                            <div class="skill-badge">Kubernetes</div> <div class="skill-badge">Prometheus</div>
-                            <div class="skill-badge">Grafana</div> <div class="skill-badge">Pandas</div>
-                        </div>
-                    </div>
+                    <div class="skill-badge">Python</div><div class="skill-badge">JavaScript</div><div class="skill-badge">Node.js</div>
+                    <div class="skill-badge">React</div><div class="skill-badge">SQL</div><div class="skill-badge">Docker</div>
+                    <div class="skill-badge">Kubernetes</div><div class="skill-badge">Azure</div>
                 </div>
             </section>
-
-            <footer class="site-footer">
-                <div class="container text-center text-lg-start">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <h5 class="text-white mb-3">Omri Naftali</h5>
-                            <p class="text-muted small">Bat-Yam, Israel | <a href="mailto:omrinaftali@gmail.com" class="text-warning">omrinaftali@gmail.com</a></p>
-                        </div>
-                        <div class="col-lg-6 text-lg-end">
-                            <a href="https://linkedin.com/in/omrinaftali" class="social-icon-link bi-linkedin me-3"></a>
-                            <a href="https://github.com/omrinaftali" class="social-icon-link bi-github"></a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
         </main>
+
+        <footer class="site-footer">
+            <div class="container text-center py-4">
+                <p class="text-white mb-0">Omri Naftali | Bat-Yam, Israel | <a href="mailto:omrinaftali@gmail.com" class="text-warning">omrinaftali@gmail.com</a></p>
+                <div class="mt-3">
+                    <a href="https://linkedin.com/in/omrinaftali" class="bi-linkedin text-white me-3"></a>
+                    <a href="https://github.com/omrinaftali" class="bi-github text-white"></a>
+                </div>
+            </div>
+        </footer>
 
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/jquery.sticky.js"></script>
         <script src="js/aos.js"></script>
-        <script src="js/jquery.magnific-popup.min.js"></script>
-        <script src="js/magnific-popup-options.js"></script>
-        <script src="js/scrollspy.min.js"></script>
-        <script src="js/custom.js"></script>
-
         <script>
-            // Dark Mode Logic
             const themeToggle = document.getElementById('theme-toggle');
             const themeIcon = document.getElementById('theme-icon');
-            const currentTheme = localStorage.getItem('theme') || 'light';
-
-            document.documentElement.setAttribute('data-theme', currentTheme);
-            updateThemeUI(currentTheme);
-
             themeToggle.addEventListener('click', () => {
-                const newTheme = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+                const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+                const newTheme = isDark ? 'light' : 'dark';
                 document.documentElement.setAttribute('data-theme', newTheme);
                 localStorage.setItem('theme', newTheme);
-                updateThemeUI(newTheme);
+                themeIcon.className = isDark ? 'bi-sun-fill' : 'bi-moon-stars-fill';
+                themeToggle.style.background = isDark ? '#f1c40f' : '#fff';
             });
-
-            function updateThemeUI(theme) {
-                if (theme === 'dark') {
-                    themeIcon.classList.replace('bi-sun-fill', 'bi-moon-stars-fill');
-                    themeToggle.style.background = '#fff';
-                    themeToggle.style.color = '#000';
-                } else {
-                    themeIcon.classList.replace('bi-moon-stars-fill', 'bi-sun-fill');
-                    themeToggle.style.background = '#f1c40f';
-                    themeToggle.style.color = '#000';
-                }
-            }
-
             AOS.init({ duration: 800, once: true });
         </script>
     </body>
